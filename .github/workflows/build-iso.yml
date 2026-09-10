@@ -7,9 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    container:
-      image: archlinux:latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout
@@ -19,22 +17,15 @@ jobs:
         shell: bash
         run: |
           set -eux
-          pacman -Sy --noconfirm archlinux-keyring
-          pacman -S --noconfirm --needed archiso grub syslinux git
-
-      - name: Prepare writable machine-id
-        shell: bash
-        run: |
-          set -eux
-          rm -f /etc/machine-id
-          dbus-uuidgen --ensure=/etc/machine-id
+          sudo pacman -Sy --noconfirm archlinux-keyring
+          sudo pacman -S --noconfirm --needed archiso grub syslinux
 
       - name: Build ISO
         shell: bash
         run: |
           set -eux
           mkdir -p out work
-          mkarchiso -v -w ./work -o ./out .
+          sudo mkarchiso -v -w ./work -o ./out .
 
       - name: Upload ISO artifact
         uses: actions/upload-artifact@v4
