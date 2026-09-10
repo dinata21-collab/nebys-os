@@ -1,0 +1,10 @@
+NAME="Nebys OS"
+PRETTY_NAME="Nebys OS (Arch-based)"
+ID=nebys
+BUILD_ID=rolling
+ANSI_COLOR="38;2;23;147;209"
+HOME_URL="https://github.com/dinata21-collab"
+DOCUMENTATION_URL="https://github.com/dinata21-collab"
+SUPPORT_URL="https://github.com/dinata21-collab"
+BUG_REPORT_URL="https://github.com/dinata21-collab"
+LOGO=archlinux-logo

@@ -1,0 +1,69 @@
+# base
+base
+linux
+linux-firmware
+mkinitcpio
+systemd
+sudo
+nano
+vim
+
+# bootloader/tools
+grub
+efibootmgr
+
+# network
+networkmanager
+openssh
+wget
+curl
+git
+rsync
+tmux
+
+# desktop minimal (XFCE)
+xorg-server
+xorg-xinit
+xfce4
+xfce4-goodies
+lightdm
+lightdm-gtk-greeter
+network-manager-applet
+thunar
+xfce4-terminal
+
+# diagnostics
+htop
+btop
+fastfetch
+inxi
+lsof
+strace
+
+# disk/recovery
+gparted
+smartmontools
+testdisk
+ddrescue
+ntfs-3g
+dosfstools
+exfatprogs
+btrfs-progs
+
+# network diagnostics
+nmap
+tcpdump
+wireshark-qt
+iperf3
+net-tools
+bind
+
+# hardware utils
+usbutils
+pciutils
+dmidecode
+fwupd
+
+# archive utils
+unzip
+p7zip
