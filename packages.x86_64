@@ -67,3 +67,4 @@ fwupd
 # archive utils
 unzip
 p7zip
+syslinux
