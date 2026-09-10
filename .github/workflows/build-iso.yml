@@ -15,7 +15,7 @@ jobs:
       - name: Install dependencies
         run: |
           pacman -Syu --noconfirm
-          pacman -S --noconfirm archiso git
+          pacman -S --noconfirm archiso git grub syslinux
 
       - name: Checkout
         uses: actions/checkout@v4
