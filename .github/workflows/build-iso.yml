@@ -3,7 +3,7 @@ name: Build Nebys OS ISO
 on:
   workflow_dispatch:
   push:
-    branches: [ "master", "main" ]
+    branches: [ "main", "master" ]
 
 jobs:
   build:
@@ -12,16 +12,22 @@ jobs:
       image: archlinux:latest
 
     steps:
-      - name: Install dependencies
-        run: |
-          pacman -Syu --noconfirm
-          pacman -S --noconfirm archiso git
-
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build ISO
+      - name: Install dependencies
+        shell: bash
         run: |
+          set -euxo pipefail
+          pacman -Syu --noconfirm
+          pacman -S --noconfirm archiso grub syslinux
+          which grub-install
+          grub-install --version
+
+      - name: Build ISO
+        shell: bash
+        run: |
+          set -euxo pipefail
           mkdir -p out work
           mkarchiso -v -w ./work -o ./out .
 
